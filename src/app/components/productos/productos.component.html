@@ -1,0 +1,40 @@
+
+
+<div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h3>PRODUCTOS</h3>
+        <button (click)=" agregarProducto()" class="btn btn-warning">Agregar</button>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover">
+          <thead>
+            <tr class="text-center">
+
+              <th>Nombre</th>
+              <th>Codigo</th>
+              <th>Categoria</th>
+              <th>Precio</th>
+              <th>detalle</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let producto of productos" class="text-center">
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.id}}</td>
+                <td>{{producto.categoria}}</td>
+                <td>{{producto.precio}}</td>
+                <td>{{producto.detalle}}</td>
+                <td>{{producto.cantidad}}</td>
+                <td>
+                    <button img *ngIf="producto.cantidad!='0'" (click)="bajarStock(producto.id)" class="btn btn-danger" style="margin-left: 10px;">Bajar STOCK</button>
+                  
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+ 

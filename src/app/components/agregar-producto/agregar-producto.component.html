@@ -1,0 +1,28 @@
+
+  <form>
+    <div class="form-group">
+      <label for="Nombre">Nombre</label>
+      <input  name="nombre" type="text" class="form-control" [(ngModel)]="producto.nombre">
+
+    </div>
+    
+    <div class="form-group">
+      <label for="Especificaciones">Especificaciones</label>
+      <input  name="detalle" type="text" class="form-control" [(ngModel)]="producto.detalle">
+    </div>
+    <div class="form-group">
+      <label for="Cantidad">Cantidad</label>
+      <input  name="cantidad" type="number" class="form-control" [(ngModel)]="producto.cantidad">
+    </div>
+    <div class="form-group">
+      <label for="Precio">Precio</label>
+      <input  name="precio" type="number" class="form-control" [(ngModel)]="producto.precio">
+    </div>
+    <div class="form-group">
+      <label for="Categoria">Categoria</label>
+      <input  name="categoria" type="text" class="form-control" [(ngModel)]="producto.categoria">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="Guardar()" >Guardar</button>
+  </form>
+ 
