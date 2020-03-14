@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../services/productos.service';
 import { Router } from '@angular/router';
 import { Producto } from '../../modelos/Producto';
+import { Registro } from '../../modelos/Registro';
+
 
 @Component({
   selector: 'app-productos',
@@ -10,7 +12,8 @@ import { Producto } from '../../modelos/Producto';
 })
 export class ProductosComponent implements OnInit {
   productos: Producto[];
-  codigo: string;
+  registros: Registro[];
+   codigo: string;
 
   constructor(
     private productoService: ProductosService,
@@ -23,6 +26,8 @@ export class ProductosComponent implements OnInit {
     this.productoService.getProductos().subscribe(data => {
       this.productos = data;
     });
+    this.productoService.getKardex().subscribe(
+      data =>   this.registros = data);
   }
   verProducto(idx: number) {
     this.router.navigate(['/producto', idx]);
@@ -36,4 +41,5 @@ export class ProductosComponent implements OnInit {
     this.productoService.bajarStock(id).subscribe(data => data);
     location.reload();
   }
+
 }
